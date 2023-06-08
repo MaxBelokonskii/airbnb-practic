@@ -3,26 +3,6 @@
   font-size: 16px;
 }
 
-/*
-  Для перебития стилей браузерного автозаполенния
-*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-select:-webkit-autofill,
-select:-webkit-autofill:hover {
-  @apply !border-background-primary shadow-[0_0_0_1000px_rgb(var(--background-secondary))_inset];
-  -webkit-text-fill-color: rgb(var(--black));
-}
-
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill:focus {
-  @apply !border-main shadow-[0_0_0_1000px_rgb(var(--white))_inset];
-  -webkit-text-fill-color: rgb(var(--black));
-}
-
 /* Убирает подсвечивание фона кнопки при тапе с телефона */
 button {
   /* T_T */
