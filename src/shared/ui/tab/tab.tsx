@@ -5,41 +5,27 @@ import CloseIcon from '@/shared/assets/icons/common/close.svg'
 import cn from 'classnames'
 import { Button } from '@/shared/ui'
 
-export type VariantTabs = 'primary' | 'transparent'
-
 export interface TabProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  variant?: VariantTabs
   href?: string
   active?: boolean
   error?: boolean
   onRemove?: () => void
 }
 
-export const Tab: FC<TabProps> = ({
-  children,
-  href,
-  variant = 'primary',
-  error,
-  className,
-  active,
-  onRemove,
-  ...rest
-}) => {
+export const Tab: FC<TabProps> = ({ children, href, error, className, active, onRemove, ...rest }) => {
   return (
     <OptionalLinkWrapper href={href}>
       <button
         type='button'
-        className={cn('flex items-center text-text border-2 outline-none transition-colors', className, {
-          'bg-transparent p-2 hover:border-b-main active:text-main active:border-b-main': variant === 'transparent',
-          'border-transparent': variant === 'transparent' && !active,
-          '!text-main border-transparent border-b-main p-3': variant === 'transparent' && active,
-          'rounded-base px-4 py-2.5': variant === 'primary',
-          '!text-black bg-border border-border': variant === 'primary' && active,
-          'bg-background-tertiary border-background-primary hover:border-main active:border-border active:text-black active:bg-border':
-            variant === 'primary' && !active,
-          '!text-red': error,
-          'gap-x-3.5': onRemove || error,
-        })}
+        className={cn(
+          'flex items-center bg-white text-text rounded-lg outline-none transition-colors px-4 py-2.5 hover:bg-white-secondary hover:text-brown-grey',
+          className,
+          {
+            '!text-brown-grey bg-white-secondary bg-border': active,
+            '!text-red': error,
+            'gap-x-3.5': onRemove || error,
+          }
+        )}
         {...rest}
       >
         <h2>{children}</h2>
