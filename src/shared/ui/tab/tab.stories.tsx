@@ -6,10 +6,6 @@ export default {
   title: 'Shared/TabPanel',
   component: Tab,
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['primary', 'transparent'],
-    },
     error: {
       control: 'boolean',
       defaultValue: false,
