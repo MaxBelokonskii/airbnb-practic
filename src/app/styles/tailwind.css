@@ -28,7 +28,7 @@
   }
 
   a {
-    @apply text-secondary-secondary underline underline-offset-[3px] hover:no-underline active:text-black active:no-underline visited:text-black transition-colors
+    @apply  underline underline-offset-[3px] hover:no-underline active:text-black active:no-underline visited:text-black transition-colors
   }
 
   img {
@@ -43,9 +43,7 @@
   .scrollbar-list::-webkit-scrollbar {
     @apply w-0.5;
   }
-  .scrollbar-list::-webkit-scrollbar-thumb {
-    @apply bg-background-primary rounded-base;
-  }
+
   .scrollbar-list::-webkit-scrollbar-track {
     @apply bg-transparent;
   }
