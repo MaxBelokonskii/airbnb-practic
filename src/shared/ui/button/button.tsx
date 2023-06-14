@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { ButtonHTMLAttributes, ReactElement, forwardRef } from 'react'
 import cn from 'classnames'
 import Loading from '@/shared/assets/icons/common/loading.svg'
 import { OptionalLinkWrapper } from '@/shared/lib'
@@ -16,6 +16,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   childrenClassName?: string
   href?: string
   newTab?: boolean
+  icon?: ReactElement
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -30,6 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       childrenClassName,
       loading,
+      icon,
       ...rest
     },
     ref
@@ -46,6 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               'bg-white border border-grey text-black': variant === 'outlined' && color === 'secondary',
               'bg-white border border-grey text-text': variant === 'outlined' && color === 'primary',
               'px-[60px]': size === 'large' && variant !== 'icon',
+              'gap-5': icon,
             },
             className
           )}
@@ -66,6 +69,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               })}
             />
           }
+          {icon && icon}
           <span
             data-testid='button-children-wrapper'
             className={cn(
