@@ -8,7 +8,7 @@ module.exports = {
       center: true,
     },
     screens: {
-      main: '1440px',
+      main: '1200px',
     },
     colors: {
       transparent: 'transparent',
@@ -90,8 +90,8 @@ module.exports = {
         h3: [
           '1.0625rem',
           {
-            lineHeight: '1.3125rem',
-            fontWeight: '600',
+            lineHeight: '0,875rem',
+            fontWeight: '500',
           },
         ],
         h4: ['1.0625rem', '170%'],

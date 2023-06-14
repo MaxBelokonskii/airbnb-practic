@@ -21,7 +21,7 @@ export const Card: FC<CardProps> = ({ title, image, avatar, username, countLikes
       <NextImage width={270} height={200} src={image} className='rounded-[4px] mb-small' />
       <div className='flex justify-between max-w-[270px]'>
         <div className='flex items-center gap-2'>
-          <Avatar image={avatar} />
+          <Avatar width={24} height={24} image={avatar} />
           <p className='text-dark-blue text-[10px]'>{username}</p>
           <Label title={title} />
         </div>
